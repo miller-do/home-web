@@ -146,7 +146,11 @@ onMounted(() => {
                           <div
                             class="color-gray-400 line-clamp-3 overflow-hidden"
                           >
-                            {{ item.desc ? item.desc : '暂无' }}
+                            {{
+                              !item.desc || item.desc == 'undefined'
+                                ? '暂无'
+                                : item.desc
+                            }}
                           </div>
                         </div>
                       </div>
