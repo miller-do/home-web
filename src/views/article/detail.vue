@@ -80,12 +80,11 @@ const hdPublishComment = () => {
                   detailData.clickcount
                 }}
               </p>
-              <div class="w-full max-h-200px overflow-hidden">
+              <div class="w-full max-h-[200px] overflow-hidden">
                 <img
-                  style="width: 200px"
                   :src="detailData.thumb"
                   alt="Element logo"
-                  class="hover:scale-110 transition cursor-pointer"
+                  class="w-[200px] object-cover"
                 />
               </div>
               <section v-html="detailData.content" class="content"></section>
