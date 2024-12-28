@@ -161,7 +161,9 @@ onMounted(() => {
                               v-for="(item1, index1) in item.tags.split(',')"
                               :key="index1"
                               type="info"
-                              >{{ item1 ? item1 : '暂无' }}</el-tag
+                              >{{
+                                !item1 || item1 == 'undefined' ? '暂无' : item1
+                              }}</el-tag
                             >
                             <!-- <el-tag type="primary">中国移动</el-tag>
                           <el-tag type="success">2024年财报</el-tag>

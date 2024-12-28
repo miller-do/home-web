@@ -71,11 +71,23 @@ const hdPublishComment = () => {
             <div class="" v-loading="loading">
               <h1>{{ detailData.title }}</h1>
               <p class="text-slate-400 font-300 mb-10">
-                {{ detailData.author }} | {{ detailData.category }} |
-                {{ detailData.create_time }} | 浏览量：{{
+                {{
+                  !detailData.author || detailData.author == 'undefined'
+                    ? '佚名'
+                    : detailData.author
+                }}
+                | {{ detailData.create_time }} | 浏览量：{{
                   detailData.clickcount
                 }}
               </p>
+              <div class="w-full max-h-200px overflow-hidden">
+                <img
+                  style="width: 200px"
+                  :src="detailData.thumb"
+                  alt="Element logo"
+                  class="hover:scale-110 transition cursor-pointer"
+                />
+              </div>
               <section v-html="detailData.content" class="content"></section>
             </div>
           </el-card>
